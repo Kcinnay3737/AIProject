@@ -1,0 +1,6 @@
+build
+Deployment/**
+!Deployment/Keepme
+!Deployment/Assets
+!Deployment/Assets/**
+External/Boost/Libs/**
