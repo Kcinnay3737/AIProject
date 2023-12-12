@@ -140,12 +140,8 @@ void FirstEnemy::BeginPlay()
 		_AnimationComponent->SetOffsetPosition(Vector2D<float>(-20.0f, -20.0f));
 	}
 
-	_IAQLearning->Initialize(8, 8, 0.1, 0.1, 1.0, 0.995, 0.1f);
-
-	Vector2D<float> PlayerPosition = _Player->GetPosition() + (_Player->GetSize() / 2);
-	Vector2D<float> CurrentPosition = GetPosition() + (GetSize() / 2);
-
-	_LastDistance = CurrentPosition.Distance(PlayerPosition);
+	//AI
+	_IAQLearning->Initialize(8, 8, 0.1, 0.1, 1.0, 0.005, 0.1f);
 }
 
 void FirstEnemy::Update(float DeltaTime)
@@ -213,6 +209,7 @@ void FirstEnemy::Update(float DeltaTime)
 	}
 }
 
+//AI -----------------------------------------------------------------
 int FirstEnemy::GetCurrentState()
 {
 	Vector2D<float> PlayerPosition = _Player->GetPosition() + (_Player->GetSize() / 2);
@@ -312,6 +309,7 @@ double FirstEnemy::GetReward()
 	_CurrentReward = 0.0;
 	return TempReward;
 }
+//-------------------------------------------------------------------------
 
 void FirstEnemy::OnCollision(const std::vector<CollisionData>& CollisionsData)
 {

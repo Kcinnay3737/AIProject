@@ -1,5 +1,1 @@
-Control:
-	Bouger: WASD
-	Tier: Les fleches
-
-Sorry JS jai pas eu le temp de commenter mon code!
+Faire ctrl+shift+f et chercher AI, jai mis ce mot cle en commentaire partout ou je fais du AI

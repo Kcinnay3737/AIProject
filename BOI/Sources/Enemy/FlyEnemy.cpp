@@ -80,21 +80,25 @@ void FlyEnemy::BeginPlay()
 		_AnimationComponent->SetCurrentAnimation(std::string("BaseAnimation"));
 	}
 
-	_IAQLearning->Initialize(8, 8, 0.1, 0.1, 1.0, 0.995, 0.1f);
+	//AI -----------
+	_IAQLearning->Initialize(8, 8, 0.1, 0.1, 1.0, 0.01, 0.1f);
 
 	_CurrentState = (rand() % 7) + 0;
+	//--------------
 }
 
 void FlyEnemy::Update(float DeltaTime)
 {
     AI::Update(DeltaTime);
 
+	//AI ---------------------------
 	_CurrDelayChangeState += DeltaTime;
 	if (_CurrDelayChangeState >= _DelayChangeState)
 	{
 		_CurrDelayChangeState = 0.0f;
 		_CurrentState = (rand() % 7) + 0;
 	}
+	//------------------------------
 
 	Vector2D<float> MidPoint = GetPosition() + GetSize() / 2;
 	if (Engine::GetGraphics()->CheckPointIsOutOfScreen(MidPoint))
@@ -107,6 +111,8 @@ void FlyEnemy::Draw()
 {
 	Actor::Draw();
 }
+
+//AI ----------------------------------------------
 
 int FlyEnemy::GetCurrentState()
 {
@@ -162,6 +168,8 @@ double FlyEnemy::GetReward()
 	_CurrentReward = 0.0;
 	return TempReward;
 }
+
+//-------------------------------------------------
 
 void FlyEnemy::OnCollision(const std::vector<CollisionData>& CollisionsData)
 {

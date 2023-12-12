@@ -110,7 +110,9 @@ void BossEnemy::BeginPlay()
 		_AnimationComponent->SetCurrentAnimation(std::string("IdleAnimation"));
 	}
 
-	_IAQLearning->Initialize(2, 3, 0.1, 0.4, 1.0, 0.999, 0.1f);
+	//AI -----------
+	_IAQLearning->Initialize(2, 3, 0.1, 0.9, 1.0, 0.0005, 0.1f);
+	//--------------
 }
 
 void BossEnemy::Update(float DeltaTime)
@@ -157,6 +159,7 @@ void BossEnemy::TakeHit(float Damage)
 	}
 }
 
+//AI ----------------------------------------------------
 int BossEnemy::GetCurrentState()
 {
 	if (_CurrentBossState == Thinking)
@@ -224,6 +227,7 @@ double BossEnemy::GetReward()
 	_CurrentReward = 0.0;
 	return TempReward;
 }
+//--------------------------------------------------------
 
 void BossEnemy::OnCollision(const std::vector<CollisionData>& CollisionsData)
 {

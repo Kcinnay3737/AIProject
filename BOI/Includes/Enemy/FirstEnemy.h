@@ -1,3 +1,5 @@
+//AI
+
 #pragma once
 
 #include "Object/Actor/AI.h"
@@ -20,8 +22,6 @@ private:
 	Isaac* _Player = nullptr;
 
 	Vector2D<float> _LastVeloDir = Vector2D<float>(0.0f, 0.0f);
-
-	float _LastDistance = 0.0f;
 
 	double _CurrentReward = 0.0f;
 

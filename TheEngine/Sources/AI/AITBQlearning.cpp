@@ -1,3 +1,5 @@
+//AI
+
 #include "AI/AITBQlearning.h"
 #include "Engine.h"
 
@@ -55,7 +57,7 @@ void AITBQLearning::UpdateEpsilon(float DeltaTime)
 	_CurrentEpsilonRate += DeltaTime;
 	if (_CurrentEpsilonRate <= _EpsilonUpdateDelay)
 	{
-		SetEpsilon(GetEpsilon() * _EpsilonDiscountFactor);
+		SetEpsilon(std::max(GetEpsilon() - _EpsilonDiscountFactor, 0.0));
 	}
 }
 

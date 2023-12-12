@@ -39,17 +39,25 @@ void AI::Update(float DeltaTime)
 {
 	Actor::Update(DeltaTime);
 
+	//Get the current state
 	int CurrentState = GetCurrentState();
 
+	//Get the action
 	int Action = _IAQLearning->GetAction(CurrentState);
 
+	//Perform the action
 	PerformAction(Action, DeltaTime);
 
+	//Get the new state
 	int NewState = GetNewState();
+
+	//Get the reward
 	double Reward = GetReward();
 
+	//Update the QTable
 	_IAQLearning->UpdateQTable(CurrentState, Action, Reward, NewState);
 
+	//Update epsilon
 	_IAQLearning->UpdateEpsilon(DeltaTime);
 }
 
