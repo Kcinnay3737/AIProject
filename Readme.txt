@@ -1,1 +1,1 @@
-Faire ctrl+shift+f et chercher AI, jai mis ce mot cle en commentaire partout ou je fais du AI
+Faire ctrl+shift+f et chercher #AI, jai mis ce mot cle en commentaire partout ou je fais du AI

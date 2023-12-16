@@ -140,8 +140,9 @@ void FirstEnemy::BeginPlay()
 		_AnimationComponent->SetOffsetPosition(Vector2D<float>(-20.0f, -20.0f));
 	}
 
-	//AI
+	//#AI ---------------------------------------------------
 	_IAQLearning->Initialize(8, 8, 0.1, 0.1, 1.0, 0.005, 0.1f);
+	//-------------------------------------------------------
 }
 
 void FirstEnemy::Update(float DeltaTime)
@@ -209,7 +210,7 @@ void FirstEnemy::Update(float DeltaTime)
 	}
 }
 
-//AI -----------------------------------------------------------------
+//#AI -----------------------------------------------------------------
 int FirstEnemy::GetCurrentState()
 {
 	Vector2D<float> PlayerPosition = _Player->GetPosition() + (_Player->GetSize() / 2);

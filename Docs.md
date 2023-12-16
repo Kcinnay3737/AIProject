@@ -1,4 +1,4 @@
-Faire ctrl+shift+f et chercher AI, jai mis ce mot cle en commentaire partout ou je fais du AI
+Faire ctrl+shift+f et chercher #AI, jai mis ce mot cle en commentaire partout ou je fais du AI
 
 # Introduction
 Dans le cadre du projet pratique 2 pour le cours d'AI, j'ai choisi de développer une AI utilisant le reinforcement learning pour

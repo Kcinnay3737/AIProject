@@ -110,7 +110,7 @@ void BossEnemy::BeginPlay()
 		_AnimationComponent->SetCurrentAnimation(std::string("IdleAnimation"));
 	}
 
-	//AI -----------
+	//#AI -----------
 	_IAQLearning->Initialize(2, 3, 0.1, 0.9, 1.0, 0.0005, 0.1f);
 	//--------------
 }
@@ -159,7 +159,7 @@ void BossEnemy::TakeHit(float Damage)
 	}
 }
 
-//AI ----------------------------------------------------
+//#AI ----------------------------------------------------
 int BossEnemy::GetCurrentState()
 {
 	if (_CurrentBossState == Thinking)

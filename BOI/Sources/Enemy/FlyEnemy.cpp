@@ -80,7 +80,7 @@ void FlyEnemy::BeginPlay()
 		_AnimationComponent->SetCurrentAnimation(std::string("BaseAnimation"));
 	}
 
-	//AI -----------
+	//#AI -----------
 	_IAQLearning->Initialize(8, 8, 0.1, 0.1, 1.0, 0.01, 0.1f);
 
 	_CurrentState = (rand() % 7) + 0;
@@ -112,7 +112,7 @@ void FlyEnemy::Draw()
 	Actor::Draw();
 }
 
-//AI ----------------------------------------------
+//#AI ----------------------------------------------
 
 int FlyEnemy::GetCurrentState()
 {
